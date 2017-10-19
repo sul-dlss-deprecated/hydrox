@@ -37,7 +37,7 @@ class SuriMinter < ActiveFedora::Noid::Minter::Base
     when "201"
       response.body.strip
     when "401"
-      raise Hydrox::SutiAuthenticationError, "Incorrect username/password provided to SURI."
+      raise Hydrox::SuriAuthenticationError, "Incorrect username/password provided to SURI."
     else
       raise Hydrox::SuriException, "An error occured communicating with SURI. #{response.code}: #{response.body}"
     end
