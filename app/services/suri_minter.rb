@@ -12,6 +12,10 @@ class SuriMinter < ActiveFedora::Noid::Minter::Base
 
   private
 
+  def valid?
+    druid.match?(/\A([a-z]{2})(\d{3})([a-z]{2})(\d{4})\z/i)
+  end
+
   def retrieve_id
     suri_request.basic_auth(Settings.suri.username, Settings.suri.password)
     suri_connection.use_ssl = true
@@ -35,11 +39,18 @@ class SuriMinter < ActiveFedora::Noid::Minter::Base
   def handle_response(response)
     case response.code
     when "201"
-      response.body.strip
+      druid(response.body)
+      return druid if valid?
+      raise Hydrox::SuriInvalidDruidReturned, "Invalid druid: #{driud}"
     when "401"
-      raise Hydrox::SuriAuthenticationError, "Incorrect username/password provided to SURI."
+      raise Hydrox::SutiAuthenticationError, "Incorrect username/password provided to SURI."
     else
       raise Hydrox::SuriException, "An error occured communicating with SURI. #{response.code}: #{response.body}"
     end
   end
+
+  def druid(id=nil)
+    @druid ||= id.strip
+  end
+
 end
