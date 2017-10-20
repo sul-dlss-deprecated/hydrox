@@ -1,0 +1,4 @@
+suri:
+  service_url: <%= ENV['SURI_SERVICE_URL'] %>
+  username: <%= ENV['SURI_USERNAME'] %>
+  password: <%= ENV['SURI_PASSWORD'] %>
