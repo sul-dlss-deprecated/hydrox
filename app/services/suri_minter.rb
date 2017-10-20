@@ -41,9 +41,9 @@ class SuriMinter < ActiveFedora::Noid::Minter::Base
     when "201"
       druid(response.body)
       return druid if valid?
-      raise Hydrox::SuriInvalidDruidReturned, "Invalid druid: #{driud}"
+      raise Hydrox::SuriInvalidDruidReturned, "Invalid druid: #{druid}"
     when "401"
-      raise Hydrox::SutiAuthenticationError, "Incorrect username/password provided to SURI."
+      raise Hydrox::SuriAuthenticationError, "Incorrect username/password provided to SURI."
     else
       raise Hydrox::SuriException, "An error occured communicating with SURI. #{response.code}: #{response.body}"
     end
