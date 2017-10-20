@@ -29,7 +29,7 @@ class SuriMinter < ActiveFedora::Noid::Minter::Base
   end
 
   def suri_uri
-    @uri ||= URI.parse(Settings.suri.service_url)
+    @suri_uri ||= URI.parse(Settings.suri.service_url)
   end
 
   def suri_request
