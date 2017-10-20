@@ -6,4 +6,6 @@ module Hydrox
   class SuriAuthenticationError < StandardError; end
 
   class SuriException < StandardError; end
+
+  class SuriInvalidDruidReturned < StandardError; end
 end
