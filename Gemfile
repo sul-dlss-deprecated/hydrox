@@ -57,6 +57,7 @@ gem 'hyrax'
 
 group :development, :test do
   gem 'solr_wrapper', '>= 0.3'
+  gem 'rubocop', require: false
 end
 
 gem 'rsolr', '>= 1.0'
