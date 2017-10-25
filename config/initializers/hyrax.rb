@@ -58,6 +58,7 @@ Hyrax.config do |config|
 
   # Use the database-backed minter class
   # config.noid_minter_class = ActiveFedora::Noid::Minter::Db
+  config.noid_minter_class = Suri::Minter
 
   # Store identifier minter's state in a file for later replayability
   # config.minter_statefile = '/tmp/minter-state'
