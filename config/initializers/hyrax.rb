@@ -21,7 +21,14 @@ Hyrax.config do |config|
   # config.max_notifications_for_dashboard = 5
 
   # How frequently should a file be audited
-  # config.max_days_between_audits = 7
+  # config.max_days_between_fixity_checks = 7
+
+  # Options to control the file uploader
+  # config.uploader = {
+  #   limitConcurrentUploads: 6,
+  #   maxNumberOfFiles: 100,
+  #   maxFileSize: 500.megabytes
+  # }
 
   # Enable displaying usage statistics in the UI
   # Defaults to false
@@ -93,7 +100,7 @@ Hyrax.config do |config|
   # config.work_requires_files = true
 
   # Should a button with "Share my work" show on the front page to all users (even those not logged in)?
-  # config.always_display_share_button = true
+  # config.display_share_button_when_not_logged_in = true
 
   # The user who runs batch jobs. Update this if you aren't using emails
   # config.batch_user_key = 'batchuser@example.com'
@@ -170,11 +177,8 @@ Hyrax.config do |config|
   # Path to the Fedora import export tool jar file
   # config.import_export_jar_file_path = "tmp/fcrepo-import-export.jar"
   #
-  # Location where descriptive rdf should be exported
-  # config.descriptions_directory = "tmp/descriptions"
-  #
-  # Location where binaries are exported
-  # config.binaries_directory = "tmp/binaries"
+  # Location where BagIt files should be exported
+  # config.bagit_dir = "tmp/descriptions"
 
   # If browse-everything has been configured, load the configs.  Otherwise, set to nil.
   begin
@@ -186,6 +190,22 @@ Hyrax.config do |config|
   rescue Errno::ENOENT
     config.browse_everything = nil
   end
+
+  ## Whitelist all directories which can be used to ingest from the local file
+  # system.
+  #
+  # Any file, and only those, that is anywhere under one of the specified
+  # directories can be used by CreateWithRemoteFilesActor to add local files
+  # to works. Files uploaded by the user are handled separately and the
+  # temporary directory for those need not be included here.
+  #
+  # Default value includes BrowseEverything.config['file_system'][:home] if it
+  # is set, otherwise default is an empty list. You should only need to change
+  # this if you have custom ingestions using CreateWithRemoteFilesActor to
+  # ingest files from the file system that are not part of the BrowseEverything
+  # mount point.
+  #
+  # config.whitelisted_ingest_dirs = []
 end
 
 Date::DATE_FORMATS[:standard] = "%m/%d/%Y"
