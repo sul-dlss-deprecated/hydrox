@@ -9,3 +9,13 @@ The name is a cross between “Hydrus”, the legacy self-deposit application in
 Please be aware that the initial use of Hyrax in this repository is not a determination of platform decision related to Hyku/Hyrax, but is being used to capture initial work related to authentication and integration with existing SUL-DLSS projects.
 
 The state of the `master` branch of this repository should generally stay at the post `generate hyrax:install` step but pre `db:migrate` step.
+
+# Work Types
+
+*Note:* when generating new work types in this application, it is required to add
+
+```
+include Suri::Druid
+```
+
+to the model in order to mint the ID as a DRUID instead of a Fedora UUID.
