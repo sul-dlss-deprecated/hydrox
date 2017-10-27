@@ -20,4 +20,4 @@ cache:
   bundler: true
 
 before_script:
-  - psql -c 'create database hydrox_test;' -U postges
+  - psql -c 'create database hydrox_test;' -U postgres
