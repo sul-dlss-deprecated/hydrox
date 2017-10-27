@@ -15,7 +15,7 @@ module Suri
 
     def retrieve_druid
       return druid if valid_druid?
-      raise Hydrox::SuriInvalidDruidReturned, "Invalid druid: #{driud}"
+      raise Hydrox::SuriInvalidDruidReturned, "Invalid druid: #{druid}"
     end
 
     def druid
