@@ -1,4 +1,6 @@
 Hyrax.config do |config|
+  # Injected via `rails g hyrax:work Work`
+  config.register_curation_concern :work
   # Register roles that are expected by your implementation.
   # @see Hyrax::RoleRegistry for additional details.
   # @note there are magical roles as defined in Hyrax::RoleRegistry::MAGIC_ROLES
@@ -66,7 +68,7 @@ Hyrax.config do |config|
 
   # Use the database-backed minter class
   # config.noid_minter_class = ActiveFedora::Noid::Minter::Db
-  
+
   # Store identifier minter's state in a file for later replayability
   # config.minter_statefile = '/tmp/minter-state'
 
@@ -75,6 +77,7 @@ Hyrax.config do |config|
 
   # Path to the file characterization tool
   # config.fits_path = "fits.sh"
+  config.fits_path = "/usr/local/fits/fits.sh"
 
   # Path to the file derivatives creation tool
   # config.libreoffice_path = "soffice"
