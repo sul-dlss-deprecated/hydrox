@@ -66,7 +66,7 @@ Hyrax.config do |config|
 
   # Use the database-backed minter class
   # config.noid_minter_class = ActiveFedora::Noid::Minter::Db
-  
+
   # Store identifier minter's state in a file for later replayability
   # config.minter_statefile = '/tmp/minter-state'
 
@@ -111,6 +111,7 @@ Hyrax.config do |config|
   #
   # The banner image. Should be 5000px wide by 1000px tall
   # config.banner_image = 'https://cloud.githubusercontent.com/assets/92044/18370978/88ecac20-75f6-11e6-8399-6536640ef695.jpg'
+  config.banner_image = 'assets/banner-stanford_oval-panorama.jpg'
 
   # Temporary paths to hold uploads before they are ingested into FCrepo
   # These must be lambdas that return a Pathname. Can be configured separately

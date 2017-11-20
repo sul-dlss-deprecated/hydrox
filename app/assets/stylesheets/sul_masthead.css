@@ -1,0 +1,5 @@
+.image-masthead .background-container {
+  background-position: center center;
+  -webkit-filter: blur(0);
+  filter: blur(0);
+}
