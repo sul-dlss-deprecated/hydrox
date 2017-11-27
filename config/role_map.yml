@@ -1,6 +1,8 @@
 development:
   archivist:
     - archivist1@example.com
+  admin:
+    - amcollie@stanford.edu
 
 test:
   archivist:
@@ -21,3 +23,5 @@ test:
 
 production:
   # Add roles for users here.
+  admin:
+    - amcollie@stanford.edu
