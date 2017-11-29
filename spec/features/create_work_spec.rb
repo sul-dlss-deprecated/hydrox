@@ -15,7 +15,7 @@ RSpec.feature 'Create a Work', js: false do
 
     before do
       admin_set_id = AdminSet.find_or_create_default_admin_set_id
-      permission_template = Hyrax::PermissionTemplate.create!(admin_set_id: admin_set_id)
+      permission_template = Hyrax::PermissionTemplate.find_or_create_by!(admin_set_id: admin_set_id)
       permission_template_access = Hyrax::PermissionTemplateAccess.create!(permission_template_id: permission_template.id, agent_type: 'user', agent_id: user.user_key, access: 'deposit')
       login_as user
     end
