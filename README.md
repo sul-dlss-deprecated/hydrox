@@ -4,7 +4,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/c5f334ba892cf3ac32c5/maintainability)](https://codeclimate.com/github/sul-dlss/hydrox/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/c5f334ba892cf3ac32c5/test_coverage)](https://codeclimate.com/github/sul-dlss/hydrox/test_coverage)
 
-Hydrox is a project of DLSS to implement Hyku, the repository application developed in the Hydra-in-a-Box project, for use at Stanford.  
+Hydrox is a project of DLSS to implement Hyrax, available at [https://hydrox-dev.sul.stanford.edu/].  
 
 The name is a cross between “Hydrus”, the legacy self-deposit application in production at sdr.stanford.edu since 2013, and “Hybox”, the informal name of the Hydra-in-a-Box project. Hydrox will replace Hydrus as the web-based deposit interface to the Stanford Digital Repository.
 
