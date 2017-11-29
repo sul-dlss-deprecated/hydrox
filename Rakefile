@@ -6,3 +6,7 @@ require_relative 'config/application'
 Rails.application.load_tasks
 
 require 'solr_wrapper/rake_task' unless Rails.env.production?
+
+Dir.glob('tasks/*.rake').each { |r| import r }
+
+task default: :ci
