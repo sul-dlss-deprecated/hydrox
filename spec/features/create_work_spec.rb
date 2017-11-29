@@ -14,11 +14,13 @@ RSpec.feature 'Create a Work', js: false do
     end
 
     before do
-      AdminSet.find_or_create_default_admin_set_id
+      admin_set_id = AdminSet.find_or_create_default_admin_set_id
+      permission_template = Hyrax::PermissionTemplate.create!(admin_set_id: admin_set_id)
+      permission_template_access = Hyrax::PermissionTemplateAccess.create!(permission_template_id: permission_template.id, agent_type: 'user', agent_id: user.user_key, access: 'deposit')
       login_as user
     end
 
-    xscenario do
+    scenario do
       visit '/dashboard'
       click_link "Works"
       click_link "Add new work"
@@ -27,7 +29,7 @@ RSpec.feature 'Create a Work', js: false do
       # choose "payload_concern", option: "Work"
       # click_button "Create work"
 
-      # expect(page).to have_content "Add New Work"
+      expect(page).to have_content "Add New Work"
     end
   end
 end
