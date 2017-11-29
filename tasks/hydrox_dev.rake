@@ -16,7 +16,6 @@ task :spec_with_app_load do
   require 'active_fedora/rake_support'
 
   with_test_server do
-    ## Rake::Task['hyrax:default_admin_set:create'].invoke
     Rake::Task['spec'].invoke
   end
 end
