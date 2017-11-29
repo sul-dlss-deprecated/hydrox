@@ -3,7 +3,7 @@
 class Work < ActiveFedora::Base
   include ::Hyrax::WorkBehavior
   include Suri::Druid
-  
+
   self.indexer = WorkIndexer
   # Change this to restrict which works can be added as a child.
   # self.valid_child_concerns = []
