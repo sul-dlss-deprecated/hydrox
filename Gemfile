@@ -59,6 +59,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'hyrax', github: 'samvera/hyrax', branch: 'master'
 gem 'config'
 gem 'honeybadger', '~> 3.1'
+gem 'okcomputer'
 
 group :development, :test do
   gem 'solr_wrapper', '>= 0.3'
