@@ -303,6 +303,7 @@ GEM
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
     hiredis (0.6.1)
+    honeybadger (3.2.0)
     htmlentities (4.3.4)
     httmultiparty (0.3.16)
       httparty (>= 0.7.3)
@@ -767,6 +768,7 @@ DEPENDENCIES
   devise
   devise-guests (~> 0.6)
   fcrepo_wrapper
+  honeybadger (~> 3.1)
   hyrax!
   jbuilder (~> 2.5)
   jquery-rails
