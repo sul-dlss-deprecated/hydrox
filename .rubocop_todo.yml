@@ -8,6 +8,10 @@
 
 # Cop supports --auto-correct.
 
+Metrics/AbcSize:
+  Exclude:
+    - 'app/controllers/login_controller.rb'
+
 # Offense count: 1
 # Configuration parameters: CountComments, ExcludedMethods.
 Metrics/BlockLength:
