@@ -3,7 +3,6 @@
 ###
 class LoginController < ApplicationController
   def login
-    # Set eds_guest to nil so the EDS session gets reset if needed in the article controller
     session['suAffiliation'] = request.env['suAffiliation'] || ENV['suAffiliation']
 
     if params[:referrer].present?
