@@ -10,8 +10,8 @@ Rails.application.routes.draw do
 
   devise_for :users, skip: [:registrations, :passwords, :sessions]
   devise_scope :user do
-    get 'webauth/login' => 'login#login', as: :new_user_session
-    match 'webauth/logout' => 'devise/sessions#destroy', :as => :destroy_user_session, :via => Devise.mappings[:user].sign_out_via
+    get 'shib/login' => 'login#login', as: :new_user_session
+    match 'shib/logout' => 'devise/sessions#destroy', :as => :destroy_user_session, :via => Devise.mappings[:user].sign_out_via
   end
 
   mount Qa::Engine => '/authorities'
