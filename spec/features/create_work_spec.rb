@@ -16,9 +16,12 @@ RSpec.feature 'Create a Work', :clean_repo, js: false do
     let(:permission_template) { Hyrax::PermissionTemplate.find_or_create_by!(admin_set_id: admin_set_id) }
     let(:workflow) { Sipity::Workflow.create!(active: true, name: 'test-workflow', permission_template: permission_template) }
     let(:minter) { instance_double(Suri::Minter, mint: 'oo000oo0000')}
+    let(:kafka) { instance_double(Kafka::Client, deliver_message: nil) }
 
     before do
       allow(Suri::Minter).to receive(:new).and_return(minter)
+      allow(Kafka).to receive(:new).and_return(kafka)
+
       Sipity::WorkflowAction.create!(name: 'submit', workflow: workflow) # Need to create a single action that can be taken
 
       permission_template_access = Hyrax::PermissionTemplateAccess.create!(permission_template_id: permission_template.id, agent_type: 'user', agent_id: user.user_key, access: 'deposit')

@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'ruby-kafka'
+
 group :production do
   # For using an SQS based worker beanstalk environment
   gem 'active_elastic_job'

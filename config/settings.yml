@@ -3,3 +3,8 @@ suri:
   username: <%= ENV['SURI_USERNAME'] %>
   password: <%= ENV['SURI_PASSWORD'] %>
   use_ssl: true
+kafka:
+  seed_brokers:
+    - 'localhost:9092'
+  topic: 'test'
+  client_id: 'hydrox-app'

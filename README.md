@@ -23,3 +23,17 @@ include Suri::Druid
 ```
 
 to the model in order to mint the ID as a DRUID instead of a Fedora UUID.
+
+# Running Streaming
+
+See [https://kafka.apache.org/quickstart]
+
+Start Zookeeper
+```
+bin/zookeeper-server-start.sh config/zookeeper.properties
+```
+
+Start Kafka
+```
+bin/kafka-server-start.sh config/server.properties
+```
