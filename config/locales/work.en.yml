@@ -1,4 +1,7 @@
 en:
+  activefedora:
+    models:
+      work: 'Work'
   hyrax:
     icons:
       work:     'fa fa-file-text-o'
