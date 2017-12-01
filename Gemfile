@@ -33,8 +33,10 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# For using an SQS based worker beanstalk environment
-gem 'active_elastic_job'
+group :production do
+  # For using an SQS based worker beanstalk environment
+  gem 'active_elastic_job'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -42,6 +44,10 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'solr_wrapper', '>= 0.3'
+  gem 'rubocop', require: false
+  gem 'fcrepo_wrapper'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -60,17 +66,7 @@ gem 'hyrax', github: 'samvera/hyrax', branch: 'master'
 gem 'config'
 gem 'honeybadger', '~> 3.1'
 gem 'okcomputer'
-
-group :development, :test do
-  gem 'solr_wrapper', '>= 0.3'
-  gem 'rubocop', require: false
-end
-
 gem 'rsolr', '>= 1.0'
 gem 'jquery-rails'
 gem 'devise'
 gem 'devise-guests', '~> 0.6'
-group :development, :test do
-  gem 'fcrepo_wrapper'
-  gem 'rspec-rails'
-end
