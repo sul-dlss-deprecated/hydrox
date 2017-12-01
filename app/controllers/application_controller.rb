@@ -10,4 +10,10 @@ class ApplicationController < ActionController::Base
   with_themed_layout '1_column'
 
   protect_from_forgery with: :exception
+
+  private
+
+  def after_sign_out_path_for(*)
+    '/Shibboleth.sso/Logout'
+  end
 end

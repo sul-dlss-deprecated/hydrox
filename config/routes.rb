@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
-  
+
   mount Blacklight::Engine => '/'
-  
+
     concern :searchable, Blacklight::Routes::Searchable.new
 
   resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
     concerns :searchable
   end
 
-  devise_for :users
+  devise_for :users, skip: [:registrations, :passwords, :sessions]
+  devise_scope :user do
+    get 'webauth/login' => 'login#login', as: :new_user_session
+    match 'webauth/logout' => 'devise/sessions#destroy', :as => :destroy_user_session, :via => Devise.mappings[:user].sign_out_via
+  end
+
   mount Qa::Engine => '/authorities'
   mount Hyrax::Engine, at: '/'
   resources :welcome, only: 'index'
