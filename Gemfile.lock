@@ -644,6 +644,7 @@ GEM
       json
       multipart-post
       oauth2
+    ruby-kafka (0.5.1)
     ruby-progressbar (1.9.0)
     ruby_dep (1.5.0)
     rubyzip (1.2.1)
@@ -784,6 +785,7 @@ DEPENDENCIES
   rsolr (>= 1.0)
   rspec-rails
   rubocop
+  ruby-kafka
   sass-rails (~> 5.0)
   selenium-webdriver
   solr_wrapper (>= 0.3)
