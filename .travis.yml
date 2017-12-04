@@ -17,3 +17,6 @@ language: ruby
 
 cache:
   bundler: true
+
+before_script:
+  - bundle exec rails db:create
