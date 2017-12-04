@@ -7,7 +7,6 @@ rvm:
 env:
   global:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
-    - DATABASE=hydrox_test
 
 services:
   - postgresql
@@ -18,7 +17,3 @@ language: ruby
 
 cache:
   bundler: true
-
-before_script:
-  - psql -c 'create database hydrox_test;' -U postgres
-  - bundle exec rake ci
