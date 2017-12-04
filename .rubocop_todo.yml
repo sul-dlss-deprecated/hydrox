@@ -11,18 +11,23 @@
 Metrics/AbcSize:
   Exclude:
     - 'app/controllers/login_controller.rb'
+    - 'db/migrate/*'
 
 # Offense count: 1
 # Configuration parameters: CountComments, ExcludedMethods.
 Metrics/BlockLength:
   Exclude:
     - 'app/controllers/catalog_controller.rb'
+    - 'config/initializers/*'
+    - 'db/schema.rb'
+    - 'spec/**/*'
 
 # Offense count: 1
 # Configuration parameters: CountComments.
 Metrics/ClassLength:
   Exclude:
     - 'app/controllers/catalog_controller.rb'
+    - 'db/migrate/*'
 
 # Offense count: 38
 # Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
@@ -31,6 +36,10 @@ Metrics/LineLength:
   Max: 120
   Exclude:
     - 'app/controllers/catalog_controller.rb'
+    - 'spec/features/create_work_spec.rb'
+    - 'config/initializers/**'
+    - 'config/routes.rb'
+    - 'db/**/*'
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -46,10 +55,20 @@ Style/ClassAndModuleChildren:
     - 'app/models/qa/local_authority.rb'
     - 'app/models/qa/local_authority_entry.rb'
 
+Style/GuardClause:
+  Exclude:
+    - 'db/migrate/20171010171574_tidy_up_because_of_bad_exception.hyrax.rb'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/*'
+
 # Offense count: 12
 Style/Documentation:
   Exclude:
+    - 'config/application.rb'
     - 'spec/**/*'
+    - 'db/migrate/*'
     - 'app/controllers/application_controller.rb'
     - 'app/controllers/catalog_controller.rb'
     - 'app/helpers/application_helper.rb'
@@ -86,3 +105,9 @@ Style/SymbolArray:
 Lint/HandleExceptions:
   Exclude:
     - 'tasks/hydrox_dev.rake'
+    - 'db/migrate/*'
+
+Lint/RescueWithoutErrorClass:
+  Exclude:
+    - 'db/migrate/*'
+
