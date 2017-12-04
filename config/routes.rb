@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     concerns :searchable
   end
 
-  if Rails.env.development?
+  if Rails.env.development? || Rails.env.test?
     devise_for :users
   else
     devise_for :users, skip: [:registrations, :passwords, :sessions]

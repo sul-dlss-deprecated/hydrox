@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   private
 
   def after_sign_out_path_for(*)
-    return '/Shibboleth.sso/Logout' unless Rails.env.development?
+    return '/Shibboleth.sso/Logout' unless Rails.env.development? || Rails.env.test?
     root_path
   end
 end
