@@ -15,35 +15,35 @@ RSpec.feature 'Create a Work', :clean_repo, js: false do
     let(:admin_set_id) { AdminSet.find_or_create_default_admin_set_id }
     let(:permission_template) { Hyrax::PermissionTemplate.find_or_create_by!(admin_set_id: admin_set_id) }
     let(:workflow) { Sipity::Workflow.create!(active: true, name: 'test-workflow', permission_template: permission_template) }
-    let(:minter) { instance_double(Suri::Minter, mint: 'oo000oo0000')}
+    let(:minter) { instance_double(Suri::Minter, mint: 'oo000oo0000') }
 
     before do
       allow(Suri::Minter).to receive(:new).and_return(minter)
       Sipity::WorkflowAction.create!(name: 'submit', workflow: workflow) # Need to create a single action that can be taken
 
-      permission_template_access = Hyrax::PermissionTemplateAccess.create!(permission_template_id: permission_template.id, agent_type: 'user', agent_id: user.user_key, access: 'deposit')
+      Hyrax::PermissionTemplateAccess.create!(permission_template_id: permission_template.id, agent_type: 'user', agent_id: user.user_key, access: 'deposit')
       login_as user
     end
 
     scenario do
       visit '/dashboard'
-      click_link "Works"
-      click_link "Add new work"
+      click_link 'Works'
+      click_link 'Add new work'
 
       # If you generate more than one work uncomment these lines
       # choose "payload_concern", option: "Work"
       # click_button "Create work"
 
-      expect(page).to have_content "Add New Work"
+      expect(page).to have_content 'Add New Work'
 
-      click_link "Files" # switch tab
-      expect(page).to have_content "Add files"
-      expect(page).to have_content "Add folder"
+      click_link 'Files' # switch tab
+      expect(page).to have_content 'Add files'
+      expect(page).to have_content 'Add folder'
       within('span#addfiles') do
-        attach_file("files[]", "#{Hyrax::Engine.root}/spec/fixtures/image.jp2", visible: false)
-        attach_file("files[]", "#{Hyrax::Engine.root}/spec/fixtures/jp2_fits.xml", visible: false)
+        attach_file('files[]', "#{Hyrax::Engine.root}/spec/fixtures/image.jp2", visible: false)
+        attach_file('files[]', "#{Hyrax::Engine.root}/spec/fixtures/jp2_fits.xml", visible: false)
       end
-      click_link "Descriptions" # switch tab
+      click_link 'Descriptions' # switch tab
       fill_in('Title', with: 'My Test Work')
       fill_in('Creator', with: 'Doe, Jane')
       fill_in('Keyword', with: 'testing')
@@ -61,7 +61,7 @@ RSpec.feature 'Create a Work', :clean_repo, js: false do
       # puts "Agreement : #{page.evaluate_script(%{$('#form-progress').data('save_work_control').depositAgreement.isAccepted})}"
       click_on('Save')
       expect(page).to have_content('My Test Work')
-      expect(page).to have_content "Your files are being processed by Hyrax in the background."
+      expect(page).to have_content 'Your files are being processed by Hyrax in the background.'
     end
   end
 end
