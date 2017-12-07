@@ -1,6 +1,7 @@
 class Users::SessionsController < Devise::SessionsController
   def new
     if Settings.require_shib_user_authn
+      store_location_for(:user, '/dashboard')
       redirect_to user_shibboleth_omniauth_authorize_path
     else
       super
