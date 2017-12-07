@@ -19,6 +19,7 @@ Metrics/BlockLength:
   Exclude:
     - 'app/controllers/catalog_controller.rb'
     - 'config/initializers/*'
+    - 'config/routes.rb'
     - 'db/schema.rb'
     - 'spec/**/*'
 
@@ -110,4 +111,3 @@ Lint/HandleExceptions:
 Lint/RescueWithoutErrorClass:
   Exclude:
     - 'db/migrate/*'
-
