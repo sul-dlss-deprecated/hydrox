@@ -1,17 +1,3 @@
-require 'devise_remote_user'
-
-DeviseRemoteUser.configure do |config|
-  config.env_key = lambda do |env|
-    if env['REMOTE_USER']
-      env['REMOTE_USER']
-    elsif Rails.env.development? && ENV['REMOTE_USER']
-      ENV['REMOTE_USER']
-    end
-  end
-  config.auto_create = true
-  config.auto_update = true
-end
-
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -265,7 +251,11 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-
+  config.omniauth :shibboleth, {:uid_field => 'eppn',
+                           :info_fields => {:email => 'mail', :name => 'cn', :last_name => 'sn'},
+                           :extra_fields => [:schacHomeOrganization]
+                    }
+                    
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

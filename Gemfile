@@ -64,7 +64,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'config'
 gem 'devise'
 gem 'devise-guests', '~> 0.6'
-gem 'devise-remote-user'
+gem 'omniauth-shibboleth'
 gem 'honeybadger', '~> 3.1'
 gem 'hyrax', github: 'samvera/hyrax', branch: 'master'
 gem 'jquery-rails'

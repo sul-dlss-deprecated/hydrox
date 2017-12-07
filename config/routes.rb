@@ -7,12 +7,7 @@ Rails.application.routes.draw do
     concerns :searchable
   end
 
-  devise_for :users, skip: [:registrations, :passwords, :sessions]
-  devise_scope :user do
-    get 'shib/login' => 'login#login', as: :new_user_session
-    match 'shib/logout' => 'devise/sessions#destroy', :as => :destroy_user_session, :via => Devise.mappings[:user].sign_out_via
-  end
-
+  devise_for :users, controllers: {sessions: "users/sessions"}
   mount Qa::Engine => '/authorities'
   mount Hyrax::Engine, at: '/'
   resources :welcome, only: 'index'
