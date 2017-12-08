@@ -1,3 +1,3 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :shibboleth
+  provider :shibboleth, { :request_type => :header }
 end

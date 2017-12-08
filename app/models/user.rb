@@ -18,6 +18,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:shibboleth]
 
+  def self.from_omniauth(env)
+    Rails.logger.info "USER MODEL DEBUG"
+    Rails.logger.info env
+    where(email: 'amcollie@stanford.edu').first_or_create do |user|
+      user.email = 'amcollie@stanford.edu'
+    end
+  end
+
   # Method added by Blacklight; Blacklight uses #to_s on your
   # user class to get a user-displayable login/identifier for
   # the account.
