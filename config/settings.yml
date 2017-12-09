@@ -5,4 +5,4 @@ suri:
   use_ssl: true
 
 require_shib_user_authn: true
-sso_logout_url: /Shibboleth.sso/Logout
+sso_logout_url: /Shibboleth.sso/Logout?return=https://hydrox-dev.sul.stanford.edu/
