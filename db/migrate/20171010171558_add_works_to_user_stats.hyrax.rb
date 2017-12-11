@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This migration comes from hyrax (originally 20160328222233)
 class AddWorksToUserStats < ActiveRecord::Migration[4.2]
   def self.up

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This migration comes from hyrax (originally 20170307142607)
 class TidyUpBecauseOfBadException < ActiveRecord::Migration[4.2]
   def change

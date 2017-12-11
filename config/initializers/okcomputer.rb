@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'okcomputer'
 
 # /status for 'upness' (Rails app is responding), e.g. for load balancer

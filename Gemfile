@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -69,5 +71,5 @@ gem 'hyrax', github: 'samvera/hyrax', branch: 'master'
 gem 'jquery-rails'
 gem 'okcomputer'
 gem 'omniauth-shibboleth'
-gem 'rsolr', '>= 1.0'
 gem 'riiif', '~> 1.1'
+gem 'rsolr', '>= 1.0'
