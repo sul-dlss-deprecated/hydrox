@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This migration comes from hyrax (originally 20161021180154)
 class CreatePermissionTemplateAccess < ActiveRecord::Migration[4.2]
   def change

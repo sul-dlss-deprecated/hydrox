@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This migration comes from hyrax (originally 20160427155928)
 class CreateOperations < ActiveRecord::Migration[4.2]
   def change
