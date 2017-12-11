@@ -3,3 +3,6 @@ suri:
   username: <%= ENV['SURI_USERNAME'] %>
   password: <%= ENV['SURI_PASSWORD'] %>
   use_ssl: true
+
+require_shib_user_authn: true
+sso_logout_url: /Shibboleth.sso/Logout?return=https://hydrox-dev.sul.stanford.edu/

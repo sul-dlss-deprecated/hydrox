@@ -14,8 +14,17 @@ class User < ApplicationRecord
   include Blacklight::User
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :remote_user_authenticatable, :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable,
+         :omniauthable, omniauth_providers: [:shibboleth]
+
+  def self.from_omniauth(auth)
+    where(email: auth.uid).first_or_create do |user|
+      user.email = auth.uid
+      user.display_name = auth.info.name
+      user.password = Devise.friendly_token[0, 20]
+    end
+  end
 
   # Method added by Blacklight; Blacklight uses #to_s on your
   # user class to get a user-displayable login/identifier for
