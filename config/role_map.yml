@@ -25,3 +25,5 @@ production:
   # Add roles for users here.
   admin:
     - amcollie@stanford.edu
+    - efahy@stanford.edu
+    - hfrost@stanford.edu
