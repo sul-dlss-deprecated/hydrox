@@ -192,6 +192,9 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    carrierwave-aws (1.2.0)
+      aws-sdk (~> 2.1)
+      carrierwave (>= 0.7, < 2.0)
     childprocess (0.8.0)
       ffi (~> 1.0, >= 1.0.11)
     clipboard-rails (1.7.1)
@@ -781,6 +784,7 @@ DEPENDENCIES
   active_elastic_job
   byebug
   capybara (~> 2.13)
+  carrierwave-aws
   coffee-rails (~> 4.2)
   config
   devise

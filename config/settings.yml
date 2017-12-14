@@ -6,3 +6,6 @@ suri:
 
 require_shib_user_authn: true
 sso_logout_url: /Shibboleth.sso/Logout?return=https://hydrox-dev.sul.stanford.edu/
+
+s3:
+  upload_bucket: <%= ENV['S3_BUCKET_NAME'] %>
