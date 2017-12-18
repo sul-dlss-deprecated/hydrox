@@ -107,7 +107,18 @@ Lint/HandleExceptions:
     - 'tasks/hydrox_dev.rake'
     - 'db/migrate/*'
 
-Lint/RescueWithoutErrorClass:
+Style/RescueStandardError:
   Exclude:
     - 'db/migrate/*'
 
+Style/IfUnlessModifier:
+  Exclude:
+    - 'app/models/user.rb'
+
+Style/FormatStringToken:
+  Exclude:
+    - 'config/**/*'
+
+Style/MixinUsage:
+  Exclude:
+    - 'spec/features/create_work_spec.rb'
