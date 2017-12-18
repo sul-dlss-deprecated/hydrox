@@ -46,7 +46,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'fcrepo_wrapper'
   gem 'rspec-rails'
-  gem 'rubocop', require: false
+  gem 'rubocop', '~> 0.52.0', require: false
   gem 'selenium-webdriver'
   gem 'solr_wrapper', '>= 0.3'
 end
