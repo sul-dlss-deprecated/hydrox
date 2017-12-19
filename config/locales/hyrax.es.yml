@@ -50,6 +50,3 @@ es:
     account_name:           "Mi identificador de cuenta institucional"
     directory:
       suffix:               "@example.org"
-    footer:
-      copyright_html: "<strong>Copyright &copy; 2017 Proyecto Hydra</strong> bajo licencia de Apache, Version 2.0"
-      service_html: Un servicio de <a href="http://projecthydra.org/" class="navbar-link" target="_blank">Proyecto Hydra</a>.
