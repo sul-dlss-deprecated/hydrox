@@ -510,7 +510,7 @@ GEM
       rails (> 3.2.0)
     orm_adapter (0.5.0)
     os (0.9.6)
-    parallel (1.12.0)
+    parallel (1.12.1)
     parser (2.4.0.2)
       ast (~> 2.3)
     pg (0.21.0)
@@ -803,7 +803,7 @@ DEPENDENCIES
   riiif (~> 1.1)
   rsolr (>= 1.0)
   rspec-rails
-  rubocop
+  rubocop (~> 0.52.0)
   sass-rails (~> 5.0)
   selenium-webdriver
   solr_wrapper (>= 0.3)
