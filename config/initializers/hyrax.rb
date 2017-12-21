@@ -169,7 +169,7 @@ Hyrax.config do |config|
     if Settings.s3.upload_bucket
       'derivatives'
     else
-      Rails.root.join('tmp','derivatives')
+      Rails.root.join('tmp', 'derivatives')
     end
   end
 
