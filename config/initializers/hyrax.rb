@@ -165,6 +165,13 @@ Hyrax.config do |config|
   # Location on local file system where derivatives will be stored
   # If you use a multi-server architecture, this MUST be a shared volume
   # config.derivatives_path = Rails.root.join('tmp', 'derivatives')
+  config.derivatives_path = lambda do
+    if Settings.s3.upload_bucket
+      'derivatives'
+    else
+      Rails.root.join('tmp','derivatives')
+    end
+  end
 
   # Should schema.org microdata be displayed?
   # config.display_microdata = true
