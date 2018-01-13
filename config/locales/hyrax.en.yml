@@ -50,3 +50,9 @@ en:
     account_name:           "My Institution Account Id"
     directory:
       suffix:               "@example.org"
+    homepage:
+      featured_works:
+        document:
+          abstract_label:   "Abstract"
+      featured_work:
+        label: "Featured Work"

@@ -1,0 +1,30 @@
+<% unless @featured_work_list.featured_works.count === 0 %>
+<% presenter = @featured_work_list.featured_works[Random.rand(@featured_work_list.featured_works.count)].presenter %>
+<h2><%= t('hyrax.homepage.featured_work.label') %></h2>
+  <div class="featured-item highlighted">
+    <div class="col-sm-12">
+      <div style="float: left">
+        <%= render_thumbnail_tag presenter %>
+      </div>
+      <div>
+        <div class="featured-item-title">
+          <h3 style="font-size: 1.2em; font-weight: bold;"><%= link_to presenter.title.first, [main_app, presenter] %></h3>
+        </div>
+        <div class="featured-item-depositor">
+          <p>
+            <span class="featured-label"><%= t('hyrax.homepage.featured_works.document.depositor_label') %>:</span> <%= link_to_profile presenter.depositor(t('hyrax.homepage.featured_works.document.depositor_missing')) %>
+          </p>
+        </div>
+        <div class="featured-item-keywords">
+          <p>
+            <span class="featured-label"><%= t('hyrax.homepage.featured_works.document.keyword_label') %>:</span> <%= link_to_facet_list(presenter.keyword, 'keyword', t('hyrax.homepage.featured_works.document.keyword_missing')) %>
+          </p>
+        </div>
+        <div class="featured-item-abstract">
+          <p>
+          	<span class="featured-label"><%= t('hyrax.homepage.featured_works.document.abstract_label') %>:</span> <%= presenter.description.first %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
