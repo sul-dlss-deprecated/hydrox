@@ -56,3 +56,6 @@ en:
           abstract_label:   "Abstract"
       featured_work:
         label: "Featured Work"
+    base:
+      show:
+        rights_statement: Rights Statement
